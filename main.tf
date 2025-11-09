@@ -105,7 +105,6 @@ resource "msgraph_update_resource" "enablement_rule" {
     id            = "Enablement_EndUser_Assignment"
     enabledRules  = ["Justification", "Ticketing", "MultiFactorAuthentication"]
     target = {
-      "@odata.type"       = "microsoft.graph.unifiedRoleManagementPolicyRuleTarget"
       caller              = "EndUser"
       operations          = ["All"]
       level               = "Assignment"
@@ -124,7 +123,6 @@ resource "msgraph_update_resource" "approval_rule" {
     "@odata.type" = "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule"
     id            = "Approval_EndUser_Assignment"
     target = {
-      "@odata.type"       = "microsoft.graph.unifiedRoleManagementPolicyRuleTarget"
       caller              = "EndUser"
       operations          = ["All"]
       level               = "Assignment"
@@ -132,7 +130,6 @@ resource "msgraph_update_resource" "approval_rule" {
       enforcedSettings    = []
     }
     setting = {
-      "@odata.type"                    = "microsoft.graph.approvalSettings"
       isApprovalRequired               = true
       isApprovalRequiredForExtension   = false
       isRequestorJustificationRequired = true
